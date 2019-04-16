@@ -1,0 +1,6 @@
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Release\SpotlightBackground.exe.config
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Release\SpotlightBackground.exe
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Release\SpotlightBackground.pdb
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\obj\Release\SpotlightBackground.csproj.CoreCompileInputs.cache
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\obj\Release\SpotlightBackground.exe
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\obj\Release\SpotlightBackground.pdb

@@ -1,7 +1,8 @@
 C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.exe.config
 C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.exe
 C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.pdb
-C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\obj\Debug\SpotlightBackground.csprojAssemblyReference.cache
 C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\obj\Debug\SpotlightBackground.csproj.CoreCompileInputs.cache
 C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\obj\Debug\SpotlightBackground.exe
 C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\obj\Debug\SpotlightBackground.pdb
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.exe.CodeAnalysisLog.xml
+C:\Users\aless\Documents\VsProjects\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.exe.lastcodeanalysissucceeded
