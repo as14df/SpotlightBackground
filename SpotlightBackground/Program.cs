@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -15,9 +16,9 @@ namespace SpotlightBackground
         {
             // Get base key
             string userID = WindowsIdentity.GetCurrent().User.Value;
-            RegistryKey HKLM64 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, "DESKTOP-GPTMUFV", RegistryView.Registry64);
+            RegistryKey HKLM64 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, Environment.MachineName, RegistryView.Registry64);
             RegistryKey key = HKLM64.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\Creative\\" + userID);
-          
+
             string[] subKeyNames = key.GetSubKeyNames();
             string destPath = Directory.GetCurrentDirectory() + "\\BackgroundImages\\";
 
