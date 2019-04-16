@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 
 namespace SpotlightBackground
 {
@@ -13,11 +14,12 @@ namespace SpotlightBackground
         static void Main(string[] args)
         {
             // Get base key
+            string userID = WindowsIdentity.GetCurrent().User.Value;
             RegistryKey HKLM64 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, "DESKTOP-GPTMUFV", RegistryView.Registry64);
-            RegistryKey key = HKLM64.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\Creative\\S-1-5-21-2017277926-4256666833-3962486793-1001");
+            RegistryKey key = HKLM64.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\Creative\\" + userID);
           
             string[] subKeyNames = key.GetSubKeyNames();
-            string destPath = "C:\\Users\\aless\\Pictures\\Hintergruende\\";
+            string destPath = Directory.GetCurrentDirectory() + "\\BackgroundImages\\";
 
             if (subKeyNames.Length > 1)
             {
@@ -37,7 +39,6 @@ namespace SpotlightBackground
                 destPath += "default.png";
             }
             
-
             // Set image as Wallaper
             SystemParametersInfo(20, 0, destPath, 0x01 | 0x02);
         }
