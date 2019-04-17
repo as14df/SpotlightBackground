@@ -22,7 +22,7 @@ namespace SpotlightBackground
             string[] subKeyNames = key.GetSubKeyNames();
             string destPath = Directory.GetCurrentDirectory() + "\\BackgroundImages\\";
 
-            if (subKeyNames.Length > 1)
+            if (subKeyNames.Length > 0)
             {
                 // get folder of used image
                 RegistryKey imgKey = key.OpenSubKey(subKeyNames[subKeyNames.Length - 1]);
