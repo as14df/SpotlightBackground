@@ -11,4 +11,8 @@ Program for Windows 10 to set same background image as current Windows Spotlight
 
 ## Example
 
-TODO
+### Lockscreen
+![Alt text](https://github.com/as14df/SpotlightBackground/blob/master/Images/ls.png)
+
+### Desktop
+![Alt text](https://github.com/as14df/SpotlightBackground/blob/master/Images/ds.png)
