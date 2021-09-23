@@ -1,6 +1,8 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
@@ -8,40 +10,47 @@ namespace SpotlightBackground
 {
     class Program
     {
-        // For setting wallpaper
+        /// <summary>
+        /// For registry access
+        /// </summary>
+        /// <param name="uAction"></param>
+        /// <param name="uParam"></param>
+        /// <param name="lpvParam"></param>
+        /// <param name="fuWinIni"></param>
+        /// <returns></returns>
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         static extern int SystemParametersInfo(int uAction, int uParam, string lpvParam, int fuWinIni);
 
         static void Main(string[] args)
         {
             // Get base key
-            string userID = WindowsIdentity.GetCurrent().User.Value;
-            RegistryKey HKLM64 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, Environment.MachineName, RegistryView.Registry64);
-            RegistryKey key = HKLM64.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Authentication\\LogonUI\\Creative\\" + userID);
+            var userId = WindowsIdentity.GetCurrent().User.Value;
+            var HKLM64 = RegistryKey.OpenRemoteBaseKey(RegistryHive.LocalMachine, Environment.MachineName, RegistryView.Registry64);
+            var key = HKLM64.OpenSubKey($@"SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\LogonUI\Creative\{userId}");
 
-            string[] subKeyNames = key.GetSubKeyNames();
-            string destPath = Directory.GetCurrentDirectory() + "\\BackgroundImages\\";
+            var subKeyNames = key.GetSubKeyNames().ToList();
+            var destinationPath = $@"{Directory.GetCurrentDirectory()}\BackgroundImages\";
 
-            if (subKeyNames.Length > 0)
+            if (subKeyNames.Any())
             {
                 // get folder of used image
-                RegistryKey imgKey = key.OpenSubKey(subKeyNames[subKeyNames.Length - 1]);
+                var imageKey = key.OpenSubKey(subKeyNames.Last());
 
                 // Get image path, image id and destination path
-                string imgPath = (string)imgKey.GetValue("landscapeImage");
-                string imgID = (string)imgKey.GetValue("contentId");
-                destPath +=  imgID + ".jpg";
+                var imagePath = imageKey.GetValue("landscapeImage").ToString();
+                var imageId = imageKey.GetValue("contentId").ToString();
+                destinationPath +=  $"{imageId}.jpg";
 
                 // Copy image to destination
-                File.Copy(imgPath, destPath, true);
+                File.Copy(imagePath, destinationPath, true);
             }
             else
             {
-                destPath += "default.png";
+                destinationPath += "default.png";
             }
             
             // Set image as Wallaper
-            SystemParametersInfo(20, 0, destPath, 0x01 | 0x02);
+            SystemParametersInfo(20, 0, destinationPath, 0x01 | 0x02);
         }
     }
 }
