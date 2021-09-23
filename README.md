@@ -4,7 +4,7 @@ Program for Windows 10 to set same background image as current Windows Spotlight
 
 ## Usage
 
-* Clone project
+* Clone + build project
 * Navigate to "\SpotlightBackground\bin\Release"
 * Execute SpotlightBackground.exe
 * Enjoy new spotlight background image :)
