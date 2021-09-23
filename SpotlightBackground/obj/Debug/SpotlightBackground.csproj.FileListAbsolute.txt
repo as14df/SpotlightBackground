@@ -1,6 +1,0 @@
-C:\Users\alessaseeger\Documents\Development\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.exe.config
-C:\Users\alessaseeger\Documents\Development\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.exe
-C:\Users\alessaseeger\Documents\Development\SpotlightBackground\SpotlightBackground\bin\Debug\SpotlightBackground.pdb
-C:\Users\alessaseeger\Documents\Development\SpotlightBackground\SpotlightBackground\obj\Debug\SpotlightBackground.csproj.CoreCompileInputs.cache
-C:\Users\alessaseeger\Documents\Development\SpotlightBackground\SpotlightBackground\obj\Debug\SpotlightBackground.exe
-C:\Users\alessaseeger\Documents\Development\SpotlightBackground\SpotlightBackground\obj\Debug\SpotlightBackground.pdb
